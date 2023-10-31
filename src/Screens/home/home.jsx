@@ -1,7 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View, TextInput, SafeAreaView, ScrollView } from 'react-native';
+import { Text, View, SafeAreaView, ScrollView } from 'react-native';
 import { Header } from '../../Components/header';
 import { styles } from '../../Style/homeStyle';
+import { SearchBar } from 'react-native-elements';
+import {ListaDeTarefas} from '../../Components/taskList';
 
 export const Home = ()=> {
   return (
@@ -9,7 +10,13 @@ export const Home = ()=> {
       <View style={styles.insideBody}>
         <ScrollView >
         <Header/>
-        <Text>Listagem de Tarefas</Text>
+        <SearchBar
+          placeholder="Procurar Tarefas"
+          containerStyle={styles.searchContainer}
+          inputContainerStyle={styles.searchInputContainer}
+        />
+        <Text style={styles.homeText}>Listagem de Tarefas</Text>
+        <ListaDeTarefas/> 
       </ScrollView>
       </View>
     </SafeAreaView>

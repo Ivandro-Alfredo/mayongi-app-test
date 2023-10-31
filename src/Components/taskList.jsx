@@ -1,27 +1,44 @@
-import React, {useState} from 'react';
-import {Text, TextInput} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Button, TextInput, ScrollView } from 'react-native';
+import { styles } from '../Style/taskListStyle';
 
-export const Listtask = () =>{
-    const [switchText, setSwitchText] = useState('');
-
-    const setSwitchText = ()=>{
-
+export const ListaDeTarefas = () => {
+  const [tarefas, setTarefas] = useState([
+    { texto: 'Tarefa número 1' },
+    { texto: 'Tarefa número 2' },
+    { texto: 'Tarefa número 3' },
+    { texto: 'Tarefa número 4' },
+    { texto: 'Tarefa número 5'},
+    { texto: 'Tarefa número 6' },
+  ]);
+  const [tarefa, setTarefa] = useState('');
+  const adicionarTarefa = () => {
+    if (tarefa.trim() !== '') {
+      setTarefas([...tarefas, { texto: tarefa, isChecked: false }]);
+      setTarefa('');
     }
+  };
 
-    return(
-        <View style={styles.container}>
-            {/* <FlatList
-                data={[
-                {key: 'Tarefa Um'}]}
-                renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
-            /> */}
-           <Text ></Text>
-				<TextInput
-					styles={stilo.input}
-					placeholder='Insira a tarefa desejada'
-					onChangeText={setSwitchText}
-					value={switchText}
-				/> 
-        </View>
-    )
-}
+  return (
+    <View>
+      <ScrollView>
+        {tarefas.map((item, index) => (
+          <View key={index} style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Text >
+              {item.texto}
+            </Text>
+            <Button title="X"/>
+          </View>
+        ))}
+      </ScrollView>
+
+      <TextInput
+        placeholder="Adicionar tarefa"
+        onChangeText={(text) => setTarefa(text)}
+        value={tarefa}
+        onSubmitEditing={adicionarTarefa}
+      />
+      <Button title="add" onPress={adicionarTarefa} />
+    </View>
+  );
+};

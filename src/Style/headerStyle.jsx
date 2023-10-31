@@ -1,13 +1,12 @@
 import {StyleSheet, StatusBar} from 'react-native'
 
-
 const alturaStatusBar = StatusBar.currentHeight;
 export const styles = StyleSheet.create({
   headerBody: {
     paddingTop: 0,
   },
   header: {
-    backgroundColor: 'blue',
+    backgroundColor: '#bfddf3',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -15,13 +14,14 @@ export const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: 25,
-    color: 'white',
+    color: 'black',
+    fontWeight:'bold',
   },
   profileImage: {
     width: 60,
     height: 60,
     borderRadius: 30,
-    backgroundColor: '#ccc',
+    backgroundColor: '#ffffff',
     marginRight: 6,
   },
 });
