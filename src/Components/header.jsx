@@ -1,12 +1,17 @@
 import React from 'react'
-import { View } from 'react-native'
+import { View, Text, StatusBar} from 'react-native'
+import { styles } from './../Style/headerStyle';
 
-export const Header = ()=>{
-    return(
-        <View>
-            <View>
-                <Text>Meu App</Text>
-            </View>
+export const Header = () => {
+    return (
+      <View style={styles.headerBody}>
+        <StatusBar barStyle="light-content" />
+        <View style={styles.header}>
+          <Text style={styles.headerText}>Meu App</Text>
+          <View style={styles.profileImage}>
+            {/* Aqui você pode adicionar a imagem de perfil */}
+          </View>
         </View>
-    )
-}
+      </View>
+    );
+  };
