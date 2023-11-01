@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button, TextInput, ScrollView } from 'react-native';
+import { View, Text, Button, TextInput, ScrollView, TouchableOpacity} from 'react-native';
 import { styles } from '../Style/taskListStyle';
 
 export const ListaDeTarefas = () => {
@@ -20,25 +20,34 @@ export const ListaDeTarefas = () => {
   };
 
   return (
-    <View>
+    <ScrollView>
       <ScrollView>
         {tarefas.map((item, index) => (
-          <View key={index} style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <Text >
+          <View key={index} style={styles.taskContainer}>
+            <Text style={styles.checkbox}></Text>
+            <Text style={{ flex: 1, fontSize:18,marginLeft:17}}>
               {item.texto}
             </Text>
-            <Button title="X"/>
+            <Button title="X" 
+                color='red'   
+            />
           </View>
         ))}
       </ScrollView>
-
+        
       <TextInput
         placeholder="Adicionar tarefa"
         onChangeText={(text) => setTarefa(text)}
         value={tarefa}
         onSubmitEditing={adicionarTarefa}
+        style={styles.input}
       />
-      <Button title="add" onPress={adicionarTarefa} />
-    </View>
+      <View style={styles.addButton}>
+        <Button title="Adicionar" 
+            onPress={adicionarTarefa} 
+            color='green' 
+        />
+      </View>
+    </ScrollView>
   );
 };

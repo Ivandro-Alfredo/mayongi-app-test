@@ -1,24 +1,39 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  searchContainer: {
-    backgroundColor: 'white', // Cor de fundo branca
-    borderBottomWidth: 0, // Remove a borda inferior
-    borderTopWidth: 0, // Remove a borda superior
-    width: '90%', // Largura de 90%
-    marginLeft: 16, // Margem à esquerda de 16
-    flexDirection: 'row', // Alinhar elementos lado a lado
-    alignItems: 'center', // Alinhar verticalmente no centro
-    justifyContent: 'space-between', // Espaçamento entre elementos
-  },
-  input: {
-    flex: 1, // Ocupa todo o espaço disponível no contêiner
-  },
-  addButton: {
-    backgroundColor: 'green', // Cor de fundo verde para o botão de adicionar
-    marginLeft: 10, // Espaço à esquerda
-  },
-  buttonText: {
-    color: 'white', // Cor do texto branco para o botão
-  },
+	taskContainer: {
+		flexDirection: 'row',
+		alignItems: 'center',
+		padding: 7,
+		backgroundColor: 'white',
+		marginBottom: 10,
+		borderColor: 'white',
+		width: '90%',
+		marginLeft: 22,
+		borderRadius: 10,
+        
+	},
+    checkbox:{
+        width:18,
+        height: 18,
+        borderWidth: 1,
+    },
+	input: {
+		width: '55%',
+		marginLeft: 22,
+		borderRadius: 10,
+		borderWidth: 1,
+		borderColor: 'green',
+		height: '10%',
+		marginTop: 10,
+        paddingHorizontal: 10,
+        marginBottom:10
+	},
+	addButton: {
+		width: '30%',
+        alignSelf: 'center',
+        marginStart: 200,
+        marginTop: -48,
+        marginBottom:10
+	},
 });
