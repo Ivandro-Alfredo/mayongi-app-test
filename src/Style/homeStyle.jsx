@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     width: '90%',
     marginLeft:16,
     marginTop:-22,
-    backgroundColor: 'white', // Define o fundo do contêiner de entrada do SearchBar como branco
+    backgroundColor: 'white', 
   },
   homeText: {
     fontSize: 22,

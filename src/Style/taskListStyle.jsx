@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
 		width: '90%',
 		marginLeft: 22,
 		borderRadius: 10,
+		flex:1
         
 	},
     checkbox:{
@@ -24,7 +25,7 @@ export const styles = StyleSheet.create({
 		borderRadius: 10,
 		borderWidth: 1,
 		borderColor: 'green',
-		height: '10%',
+		height: 39,
 		marginTop: 10,
         paddingHorizontal: 10,
         marginBottom:10

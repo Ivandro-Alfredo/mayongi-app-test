@@ -7,7 +7,6 @@ import {ListaDeTarefas} from '../../Components/taskList';
 export const Home = ()=> {
   return (
     <SafeAreaView style={styles.body}>
-      <View style={styles.insideBody}>
         <ScrollView >
         <Header/>
         <SearchBar
@@ -15,10 +14,9 @@ export const Home = ()=> {
           containerStyle={styles.searchContainer}
           inputContainerStyle={styles.searchInputContainer}
         />
-        <Text style={styles.homeText}>Listagem de Tarefas</Text>
+        <Text style={styles.homeText}>Criar Lista de Tarefa</Text>
         <ListaDeTarefas/> 
       </ScrollView>
-      </View>
     </SafeAreaView>
   );
 }

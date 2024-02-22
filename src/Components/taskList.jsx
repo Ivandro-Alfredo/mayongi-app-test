@@ -3,20 +3,19 @@ import { View, Text, Button, TextInput, ScrollView, TouchableOpacity} from 'reac
 import { styles } from '../Style/taskListStyle';
 
 export const ListaDeTarefas = () => {
-  const [tarefas, setTarefas] = useState([
-    { texto: 'Tarefa número 1' },
-    { texto: 'Tarefa número 2' },
-    { texto: 'Tarefa número 3' },
-    { texto: 'Tarefa número 4' },
-    { texto: 'Tarefa número 5'},
-    { texto: 'Tarefa número 6' },
-  ]);
+  const [tarefas, setTarefas] = useState([]);
   const [tarefa, setTarefa] = useState('');
   const adicionarTarefa = () => {
     if (tarefa.trim() !== '') {
       setTarefas([...tarefas, { texto: tarefa, isChecked: false }]);
       setTarefa('');
     }
+  };
+
+  const removerTarefa = (index) => {
+    const novasTarefas = [...tarefas];
+    novasTarefas.splice(index, 1);
+    setTarefas(novasTarefas);
   };
 
   return (
@@ -29,6 +28,7 @@ export const ListaDeTarefas = () => {
               {item.texto}
             </Text>
             <Button title="X" 
+                onPress={() => removerTarefa(index)}
                 color='red'   
             />
           </View>

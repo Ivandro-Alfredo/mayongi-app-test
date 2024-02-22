@@ -9,7 +9,7 @@ export const Header = () => {
         <View style={styles.header}>
           <Text style={styles.headerText}>Meu App</Text>
           <View style={styles.profileImage}>
-            {/* Aqui você pode adicionar a imagem de perfil */}
+            {/* adicionar a imagem de perfil */}
           </View>
         </View>
       </View>
